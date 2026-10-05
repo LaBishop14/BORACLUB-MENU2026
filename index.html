@@ -187,7 +187,77 @@
     BORACLUB Cocktail Lounge
 
 </footer>
+<!-- FULLSCREEN IMAGE VIEWER -->
 
+<div id="imageViewer" class="image-viewer hidden">
+
+    <button
+        type="button"
+        id="viewerClose"
+        class="viewer-close"
+        aria-label="Close image"
+    >
+        ×
+    </button>
+
+
+    <button
+        type="button"
+        id="viewerPrev"
+        class="viewer-nav viewer-prev"
+        aria-label="Previous image"
+    >
+        ‹
+    </button>
+
+
+    <div class="viewer-content">
+
+        <div
+            id="viewerSwipeArea"
+            class="viewer-image-area"
+        >
+
+            <img
+                id="viewerImage"
+                src=""
+                alt=""
+            >
+
+        </div>
+
+
+        <div class="viewer-information">
+
+            <p id="viewerCounter"></p>
+
+            <h2 id="viewerName"></h2>
+
+            <p
+                id="viewerDescription"
+                class="viewer-description"
+            ></p>
+
+            <p
+                id="viewerPrice"
+                class="viewer-price"
+            ></p>
+
+        </div>
+
+    </div>
+
+
+    <button
+        type="button"
+        id="viewerNext"
+        class="viewer-nav viewer-next"
+        aria-label="Next image"
+    >
+        ›
+    </button>
+
+</div>
 
 <script src="assets/js/app.js"></script>
 

@@ -1367,3 +1367,424 @@ else {
     showHome();
 
 }
+/* =====================================
+   FULLSCREEN IMAGE VIEWER
+===================================== */
+
+const imageViewer =
+    document.getElementById("imageViewer");
+
+const viewerImage =
+    document.getElementById("viewerImage");
+
+const viewerName =
+    document.getElementById("viewerName");
+
+const viewerDescription =
+    document.getElementById("viewerDescription");
+
+const viewerPrice =
+    document.getElementById("viewerPrice");
+
+const viewerCounter =
+    document.getElementById("viewerCounter");
+
+const viewerClose =
+    document.getElementById("viewerClose");
+
+const viewerPrev =
+    document.getElementById("viewerPrev");
+
+const viewerNext =
+    document.getElementById("viewerNext");
+
+const viewerSwipeArea =
+    document.getElementById("viewerSwipeArea");
+
+
+let viewerItems = [];
+
+let viewerIndex = 0;
+
+
+
+function getVisibleViewerItems() {
+
+    viewerItems = Array.from(
+        document.querySelectorAll(
+            ".menu-card"
+        )
+    ).filter(card => {
+
+        return (
+            card.style.display !== "none"
+            &&
+            card.closest(".menu-section")
+                .style.display !== "none"
+        );
+
+    });
+
+}
+
+
+
+function openViewer(card) {
+
+    getVisibleViewerItems();
+
+
+    viewerIndex =
+        viewerItems.indexOf(card);
+
+
+    if (viewerIndex < 0) {
+        viewerIndex = 0;
+    }
+
+
+    updateViewer();
+
+
+    imageViewer.classList.remove(
+        "hidden"
+    );
+
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+
+function updateViewer() {
+
+    if (
+        viewerItems.length === 0
+    ) {
+        return;
+    }
+
+
+    if (
+        viewerIndex < 0
+    ) {
+
+        viewerIndex =
+            viewerItems.length - 1;
+
+    }
+
+
+    if (
+        viewerIndex >=
+        viewerItems.length
+    ) {
+
+        viewerIndex = 0;
+
+    }
+
+
+    const card =
+        viewerItems[viewerIndex];
+
+
+    const cardImage =
+        card.querySelector("img");
+
+
+    const name =
+        card.querySelector("h3")
+            ?.textContent
+            ?.trim()
+        || "";
+
+
+    const description =
+        card.querySelector(
+            ".item-description"
+        )
+        ?.textContent
+        ?.trim()
+        || "";
+
+
+    const price =
+        card.querySelector(
+            ".item-price"
+        )
+        ?.textContent
+        ?.trim()
+        || "";
+
+
+    viewerImage.src =
+        cardImage.src;
+
+
+    viewerImage.alt =
+        name;
+
+
+    viewerName.textContent =
+        name;
+
+
+    viewerDescription.textContent =
+        description;
+
+
+    viewerPrice.textContent =
+        price;
+
+
+    viewerCounter.textContent =
+        `${viewerIndex + 1} / ${viewerItems.length}`;
+
+}
+
+
+
+function closeViewer() {
+
+    imageViewer.classList.add(
+        "hidden"
+    );
+
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+
+function previousViewerImage() {
+
+    viewerIndex--;
+
+    updateViewer();
+
+}
+
+
+
+function nextViewerImage() {
+
+    viewerIndex++;
+
+    updateViewer();
+
+}
+
+
+
+/* CLICK MENU IMAGE */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        const image =
+            event.target.closest(
+                ".image-box img"
+            );
+
+
+        if (!image) {
+            return;
+        }
+
+
+        const card =
+            image.closest(
+                ".menu-card"
+            );
+
+
+        if (card) {
+
+            openViewer(card);
+
+        }
+
+    }
+);
+
+
+
+/* CLOSE */
+
+viewerClose.addEventListener(
+    "click",
+    closeViewer
+);
+
+
+
+/* PREVIOUS */
+
+viewerPrev.addEventListener(
+    "click",
+    previousViewerImage
+);
+
+
+
+/* NEXT */
+
+viewerNext.addEventListener(
+    "click",
+    nextViewerImage
+);
+
+
+
+/* CLICK DARK BACKGROUND TO CLOSE */
+
+imageViewer.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target ===
+            imageViewer
+        ) {
+
+            closeViewer();
+
+        }
+
+    }
+);
+
+
+
+/* KEYBOARD */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            imageViewer.classList.contains(
+                "hidden"
+            )
+        ) {
+            return;
+        }
+
+
+        if (
+            event.key ===
+            "Escape"
+        ) {
+
+            closeViewer();
+
+        }
+
+
+        if (
+            event.key ===
+            "ArrowLeft"
+        ) {
+
+            previousViewerImage();
+
+        }
+
+
+        if (
+            event.key ===
+            "ArrowRight"
+        ) {
+
+            nextViewerImage();
+
+        }
+
+    }
+);
+
+
+
+/* =====================================
+   MOBILE SWIPE
+===================================== */
+
+let touchStartX = 0;
+
+let touchEndX = 0;
+
+
+viewerSwipeArea.addEventListener(
+    "touchstart",
+    function(event) {
+
+        touchStartX =
+            event.changedTouches[0]
+                .screenX;
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+viewerSwipeArea.addEventListener(
+    "touchend",
+    function(event) {
+
+        touchEndX =
+            event.changedTouches[0]
+                .screenX;
+
+
+        handleSwipe();
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+
+function handleSwipe() {
+
+    const swipeDistance =
+        touchEndX - touchStartX;
+
+
+    const minimumSwipe =
+        50;
+
+
+    /* SWIPE LEFT = NEXT */
+
+    if (
+        swipeDistance <
+        -minimumSwipe
+    ) {
+
+        nextViewerImage();
+
+    }
+
+
+    /* SWIPE RIGHT = PREVIOUS */
+
+    if (
+        swipeDistance >
+        minimumSwipe
+    ) {
+
+        previousViewerImage();
+
+    }
+
+}
