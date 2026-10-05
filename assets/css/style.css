@@ -1044,6 +1044,7 @@ footer {
 
 
     #viewerImage {
+        touch-action: pan-y;
         max-height:
             67vh;
     }

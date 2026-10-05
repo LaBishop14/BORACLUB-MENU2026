@@ -1709,82 +1709,47 @@ document.addEventListener(
     }
 );
 
-
-
 /* =====================================
-   MOBILE SWIPE
+   MOBILE SWIPE - IMPROVED
+===================================== */
+/* =====================================
+   MOBILE SWIPE - IMPROVED
 ===================================== */
 
-let touchStartX = 0;
-
-let touchEndX = 0;
-
+let startX = 0;
+let startY = 0;
+let endX = 0;
+let endY = 0;
 
 viewerSwipeArea.addEventListener(
-    "touchstart",
-    function(event) {
-
-        touchStartX =
-            event.changedTouches[0]
-                .screenX;
-
-    },
-    {
-        passive: true
+    "pointerdown",
+    function (event) {
+        startX = event.clientX;
+        startY = event.clientY;
     }
 );
 
-
 viewerSwipeArea.addEventListener(
-    "touchend",
-    function(event) {
+    "pointerup",
+    function (event) {
+        endX = event.clientX;
+        endY = event.clientY;
 
-        touchEndX =
-            event.changedTouches[0]
-                .screenX;
+        const distanceX = endX - startX;
+        const distanceY = endY - startY;
 
+        if (
+            Math.abs(distanceX) >
+            Math.abs(distanceY)
+        ) {
 
-        handleSwipe();
+            if (distanceX < -50) {
+                nextViewerImage();
+            }
 
-    },
-    {
-        passive: true
+            if (distanceX > 50) {
+                previousViewerImage();
+            }
+        }
     }
 );
-
-
-
-function handleSwipe() {
-
-    const swipeDistance =
-        touchEndX - touchStartX;
-
-
-    const minimumSwipe =
-        50;
-
-
-    /* SWIPE LEFT = NEXT */
-
-    if (
-        swipeDistance <
-        -minimumSwipe
-    ) {
-
-        nextViewerImage();
-
-    }
-
-
-    /* SWIPE RIGHT = PREVIOUS */
-
-    if (
-        swipeDistance >
-        minimumSwipe
-    ) {
-
-        previousViewerImage();
-
-    }
-
-}
