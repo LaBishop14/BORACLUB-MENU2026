@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BORACLUB Cocktail Lounge Menu</title>
+
+    <link
+        rel="stylesheet"
+        href="assets/css/style.css"
+    >
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <button
+        type="button"
+        class="brand"
+        id="homeButton"
+    >
+        <div class="brand-logo">
+            B
+        </div>
+
+        <div>
+            <strong>BORACLUB</strong>
+            <small>COCKTAIL LOUNGE</small>
+        </div>
+    </button>
+
+
+    <nav>
+
+        <button
+            type="button"
+            data-menu="home"
+        >
+            HOME
+        </button>
+
+        <button
+            type="button"
+            data-menu="food"
+        >
+            FOOD
+        </button>
+
+        <button
+            type="button"
+            data-menu="drinks"
+        >
+            DRINKS
+        </button>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <!-- HOME -->
+
+    <section
+        id="homePage"
+        class="home-page"
+    >
+
+        <p class="eyebrow">
+            BORACAY • COCKTAIL LOUNGE
+        </p>
+
+        <h1>
+            FOOD & DRINKS
+        </h1>
+
+        <p class="intro">
+            Explore the BORACLUB Cocktail Lounge menu.
+        </p>
+
+
+        <div class="main-buttons">
+
+            <button
+                type="button"
+                class="main-menu-button"
+                data-menu="food"
+            >
+                <span>FOOD</span>
+
+                <small>
+                    Meals, favorites and packages
+                </small>
+            </button>
+
+
+            <button
+                type="button"
+                class="main-menu-button"
+                data-menu="drinks"
+            >
+                <span>DRINKS</span>
+
+                <small>
+                    Cocktails, spirits, coffee and more
+                </small>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- MENU -->
+
+    <section
+        id="menuPage"
+        class="menu-page hidden"
+    >
+
+        <div class="menu-heading">
+
+            <div>
+
+                <p class="eyebrow">
+                    BORACLUB COCKTAIL LOUNGE
+                </p>
+
+                <h1 id="menuTitle">
+                    FOOD
+                </h1>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="backButton"
+                class="back-button"
+            >
+                ← BACK
+            </button>
+
+        </div>
+
+
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="Search menu items..."
+            autocomplete="off"
+        >
+
+
+        <div
+            id="categoryButtons"
+            class="category-buttons"
+        ></div>
+
+
+        <div id="menuContainer"></div>
+
+
+        <div
+            id="noResults"
+            class="no-results hidden"
+        >
+            No menu items found.
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    © <span id="year"></span>
+    BORACLUB Cocktail Lounge
+
+</footer>
+
+
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>
