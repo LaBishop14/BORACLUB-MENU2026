@@ -4,14 +4,14 @@ const foodCategories = {
         {
             name: "BORACLUB Seafood Soup",
             image: "seep.png",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Fish Chowder",
             image: "fishchowder.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         }
     ],
@@ -21,35 +21,35 @@ const foodCategories = {
         {
             name: "Chicken Alfredo",
             image: "chickenalfredo.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Carbonara",
             image: "carbonara.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Creamy Bolognese",
             image: "creamybolognese.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Creamy Seafood Pasta",
             image: "creamyseafoodpasta.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Frutti di Mare",
             image: "fruttidimare.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         }
     ],
@@ -59,7 +59,7 @@ const foodCategories = {
         {
             name: "Ahi Tuna Salad",
             image: "ahi.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         }
     ],
@@ -69,105 +69,105 @@ const foodCategories = {
         {
             name: "Garlic Butter Salmon with Spinach & Mushrooms",
             image: "garlicbuttersalmon.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Pork Steak with Steamed Vegetables & Omurice",
             image: "porksteak.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Chicken Steak with Steamed Vegetables & Omurice",
             image: "chicksteak.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Baby Back Ribs with Steamed Vegetables & Mashed Potatoes",
             image: "babybackribs.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Chicken Cordon Bleu with Steamed Vegetables & Mashed Potatoes",
             image: "chickenccordonbleu.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Beef Salpicao",
             image: "beefsalpicao.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Lechon Kawali",
             image: "lechonkawali.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Calamari",
             image: "calamari.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Shrimp Tempura",
             image: "tempura.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "U.S. Tenderloin with Mushroom Sauce",
             image: "u.stendon.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Honey-Glazed Wings",
             image: "honeyglazedwings.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Buffalo Wings",
             image: "buffalowings.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Garlic Parmesan Wings",
             image: "parmesan.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Shrimp Al Ajillo",
             image: "ajillo.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Pork Sisig",
             image: "porksisig.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         }
     ],
@@ -177,7 +177,7 @@ const foodCategories = {
         {
             name: "Buttered Vegetables",
             image: "butteredveges.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         }
     ],
@@ -187,42 +187,42 @@ const foodCategories = {
         {
             name: "BORACLUB Hamburger",
             image: "borahum.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Fish & Chips",
             image: "fishchips.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Cheese Quesadilla",
             image: "cheesequi.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Beef Quesadilla",
             image: "beefqui.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Crab Cream Croquettes",
             image: "crabcream.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
         {
             name: "Menchi Katsu",
             image: "menchkat.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         }
     ],
@@ -240,7 +240,7 @@ const drinkCategories = {
         {
             name: "Bora Blue",
             image: "bora-blue.jpg",
-            price: "",
+            price: "00.00",
             description: ""
         },
 
